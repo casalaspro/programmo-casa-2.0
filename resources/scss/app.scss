@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/bootstrap';
+@import'partials/reset';
+@import 'partials/apartments';
+@import'partials/validation';
+
+.service-name {
+    text-transform: capitalize;
+};
+
+h1, h2, h3, h4, h5, h6{
+    text-transform: capitalize;
+}

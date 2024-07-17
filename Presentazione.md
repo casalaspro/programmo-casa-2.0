@@ -1,0 +1,15 @@
+PRESENTAZIONE PROGETTO
+
+BREVE INTRO
+- la nostra applicazione va a simulare le funzionalità di siti come "airB&B" e "Booking", permetendo a più tipi di utenti di compiere diverse azioni: visionare immobili per poi contatare i proprietari oppure iscriversi per poter promuovere i propri appartamenti. andiamola a vedere più nel detaglio...
+
+VARI PASSAGGI
+
+- partiamo da una home sulla quale approdano gli utenti in cerca di un appartamento in affitto. qui si vedono in primo piano gli appartamenti in evidenza, ovvero quelli con una sponsorizzazione attiva e di seguito tutti gli appartamenti inseriti, con o senza sponsorizzazione. si può quindi fare una prima ricerca per zona d'interesse, finendo su una pagina di ricerca avanzata, dove possiamo aggiungere altri filtri come: i servizi offerti dall'immobile, il numero di stanze e il numero di camere da letto.
+una volta restituiti i risultati, possiamo vedere le loro pagine di dettaglio e da li, si ha la prossibilità di contatare il proprietario tramite un messaggio. qui compiliamo un form nella quale lasciamo i nostri dati per poter essere ricontattati.
+
+- dalla stessa home ci si può registrare al sito (avendo un controllo lato client sulla validità e sulla corrispondenza delle due password), oppure si può eseguire l'accesso in caso l'utente sia già registrato. in entrambe le ipotesi si finisce sulla pagina "i miei appartamenti", che contiene gli appartamenti creati dall'utente. in caso sia il primo accesso, si può creare un immobile da poter proporre sul sito. 
+
+- nella pagina di creazione dell'immobile dobbiamo compilare un form, la cui verifica avviene sia lato client che lato server. qui dobbiamo inserire alcuni campi obbligatori, indicati come scritto dagli asterischi. possiamo infine, una volta soddisfatti i controlli, creare il nostro appartamento. alla creazione verremo automaticamente mandati sulla pagina di dettaglio, nella quale vediamo due opzioni principali ovvero l'opzione di modifica e quella di eliminazione. la prima ci porterà in una pagina simile a quella della creazione, in cui possiamo scegliere cosa modificare e nella quale vengono rieseguiti i controlli. (sia nella pagina di creazione che di modifica, è impossibile inoltre andare a vedere o modificare appartamernti non propri, poichè nel caso viene restituita una pagina con errore 401). l'eliminazone viene invece gestita con il soft-delete, che manda l'appartamento dentro al cestino che troviamo nella pagina "appartamenti", da cui si potrà ripristinare in qualsiasi momento.
+
+- abbiamo infine la pagina delle "sponsorizzazioni" e quella de "i miei messaggi". nella prima si possono vedere i vari piani disponibili per promuovere il proprio appartamento, potendo accedere anche alla scheda di detaglio sul prezzo e sulla durata di tale srvizio. nella secodna pagina sono invece visibili i vari mesaggi degli utenti, conteneti i dati principali: nome dell'utente, mail e id dell'appartamento di interesse. è possibile inoltre andare a vedere l'appartamento per il quale abbuiamo ricevuto il messaggio tramite un link. 
