@@ -327,3 +327,34 @@ se edit = false chiedi di selezionare la via suggerita
 */
 
 
+// Payment
+
+// Step two: create a dropin instance using that container (or a string
+//   that functions as a query selector such as '#dropin-container')
+// braintree.dropin.create({
+//     container: document.getElementById('dropin-container')
+//     // ...plus remaining configuration
+
+//   }, (error, dropinInstance) => {
+//     // Use 'dropinInstance' here
+//     let paymentOptions = dropinInstance.getAvailablePaymentOptions()
+//     console.log(paymentOptions)
+//     // Methods documented at https://braintree.github.io/braintree-web-drop-in/docs/current/Dropin.html
+//   });
+
+// var button = document.querySelector('#submit-button');
+
+// braintree.dropin.create({
+//   authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
+//   selector: '#dropin-container'
+// }, function (err, instance) {
+//   button.addEventListener('click', function () {
+//     instance.requestPaymentMethod(function (err, payload) {
+//       // Submit payload.nonce to your server
+//     });
+//   })
+// });
+
+
+
+  
