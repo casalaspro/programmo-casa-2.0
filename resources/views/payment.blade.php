@@ -5,12 +5,21 @@
 
   <div id="dropin-container"></div>
   <button id="submit-button" class="button button--small button--green">Purchase</button>
-  
+
+  @dump($clientToken)
+   <div class="token">{{$clientToken}}</div>
+
   <script>
-    var button = document.querySelector('#submit-button');
-  
+
+    // let CLIENT_TOKEN_FROM_SERVER = $clientToken1
+    // console.log(clientToken1)
+    let button = document.querySelector('#submit-button');
+    const CLIENT_TOKEN_FROM_SERVER = document.querySelector('.token').textContent
+    console.log(CLIENT_TOKEN_FROM_SERVER)
+
     braintree.dropin.create({
-      authorization: 'sandbox_7b3jrvq5_wvh37r4hkd8hjpgk',
+      // authorization: 'sandbox_7b3jrvq5_wvh37r4hkd8hjpgk',
+      authorization: CLIENT_TOKEN_FROM_SERVER,
       selector: '#dropin-container'
     }, function (err, instance) {
       button.addEventListener('click', function () {

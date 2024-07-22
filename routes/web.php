@@ -7,7 +7,8 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PrivateApartmentController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\PaymentController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TestController;
 use App\Models\Apartment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,7 +59,6 @@ Route::middleware(['auth','verified'])
     Route::get('messages',[ MessageController ::class, 'index'])->name('messages');
     Route::get('messages/{message}',[ MessageController ::class, 'show'])->name('messages.show');
 
-    Route::get('payment',[ PaymentController::class, 'index'])->name('payment');
 });
 
 Route::middleware('auth')->group(function () {
@@ -67,5 +67,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('payment',[ PaymentController::class, 'generateBraintreeToken'])->name('payment');
 
 require __DIR__.'/auth.php';
