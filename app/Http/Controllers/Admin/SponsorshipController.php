@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
 use App\Models\Sponsorship;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,7 @@ class SponsorshipController extends Controller
      */
     public function index()
     {
+        // dd($apartment->id);
         $sponsorships = Sponsorship::all();
 
         return view('admin.sponsorships.index', compact('sponsorships'));
@@ -68,7 +70,7 @@ class SponsorshipController extends Controller
      */
     public function update(Request $request, Sponsorship $sponsorship)
     {
-
+        
         $request->validate([
             'name'=>'required',
             'price'=>'required',
@@ -95,5 +97,12 @@ class SponsorshipController extends Controller
 
         // dico di ridirigermi alla index
         return to_route('admin.sponsorships.index');
+    }
+
+    public function sponsorshipSelection($id){
+        // dd($id);
+        $sponsorships = Sponsorship::all();
+        $apartment = Apartment::where('id', $id)->first();
+        return view('admin.sponsorships.selection', compact('sponsorships', 'apartment'));
     }
 }

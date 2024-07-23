@@ -7,6 +7,8 @@
     </h5>
 </div>
 
+<h2>Hai selezionato l'appartamento {{$id}}</h2>
+
 
 <section class="d-flex justify-content-around">
 

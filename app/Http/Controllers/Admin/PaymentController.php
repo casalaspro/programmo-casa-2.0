@@ -46,4 +46,10 @@ class PaymentController extends Controller
 
         //   return view('admin.braintree.payment', compact('clientToken'));
     }
+
+    public function collectInfos(Request $request){
+        dd($request);
+    }
+
+    
 }
