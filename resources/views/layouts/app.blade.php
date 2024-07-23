@@ -62,9 +62,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/sponsorships') }}">{{ __('Sponsorizzazioni') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/dashboard') }}">{{ __('I Miei Appartamenti') }}</a>
-                        </li>
+                        </li> -->
                         @if (Auth::check())
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/messages') }}">{{ __('I Miei Messaggi') }}</a>

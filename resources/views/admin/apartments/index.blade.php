@@ -25,7 +25,7 @@
 
         <div class="row gx-3 gy-3 text-center my-3">
             @foreach ($apartments as $apartment)
-            @if ($apartment->user_id === Auth::id())
+            @if ($apartment->user_id === Auth::id() && $apartment->visible == 1)
             <div class="col-12 col-lg-6 position-relative ">
                 <div class="card my-card-apartment h-100 py-3">
                     <div class="card-body">
