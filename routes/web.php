@@ -68,5 +68,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('payment',[ PaymentController::class, 'generateBraintreeToken'])->name('payment');
+Route::post('send/payment',[ PaymentController::class, 'payment'])->name('send.payment');
 
 require __DIR__.'/auth.php';
