@@ -12,7 +12,18 @@
 
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6 flex-grow-1">
-                    <p><strong>I campi che presentano * sono obligatori</strong></p>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            
+                            <p><strong>I campi che presentano * sono obligatori</strong></p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Visibile</label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="mb-3">
                         
                         <label for="title_apartment">* Titolo del Appartamento:</label>
@@ -115,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
             </div>
            
            
