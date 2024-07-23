@@ -17,6 +17,9 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+    <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.87.0/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.87.0/js/data-collector.min.js"></script>
 </head>
 
 <body>

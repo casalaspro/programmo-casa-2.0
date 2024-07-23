@@ -315,6 +315,13 @@ oldImage.forEach((image, i)=>{
     })
 })
 
+// axios.get('http://127.0.0.1:8000/admin/payment')
+// .then(function (response) {
+//     console.log(response);
+//     console.log('ciao');
+    
+//     }
+
 // Pseudocodice
 
 /*

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\SponsorshipController;
 use App\Http\Controllers\Admin\ApartmentController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PrivateApartmentController;
@@ -56,6 +57,9 @@ Route::middleware(['auth','verified'])
 
     Route::get('messages',[ MessageController ::class, 'index'])->name('messages');
     Route::get('messages/{message}',[ MessageController ::class, 'show'])->name('messages.show');
+
+    Route::get('payment', [PaymentController ::class, 'createToken']);
+    Route::post('payment', [PaymentController ::class, 'createTransition'])->name('payment.transition');
 });
 
 Route::middleware('auth')->group(function () {
