@@ -10,6 +10,9 @@
         <div id="dropin-container"></div>
         <input type="submit" />
         <input type="hidden" id="nonce" name="payment_method_nonce" />
+        <input type="hidden" id="nonce" value="{{ $selectedSponsorship }}" name="sponsorship" />
+        <input type="hidden" id="nonce" value="{{ $selectedApartmentIid }}" name="apartment-id" />
+
         {{-- <input type="hidden" id="dataInput" name="device_data" > --}}
       </form>
 

@@ -62,7 +62,7 @@ Route::middleware(['auth','verified'])
 
     Route::get('payment', [PaymentController ::class, 'createToken']);
     Route::post('payment', [PaymentController ::class, 'createTransition'])->name('payment.transition');
-    Route::post('payment/info',[PaymentController ::class, 'collectInfos'])->name('payment.info');
+    Route::post('payment/info',[PaymentController ::class, 'createToken'])->name('payment.info');
 });
 
 Route::middleware('auth')->group(function () {
