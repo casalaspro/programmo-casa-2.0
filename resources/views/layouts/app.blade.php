@@ -20,6 +20,9 @@
     <script src="https://js.braintreegateway.com/web/dropin/1.42.0/js/dropin.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.87.0/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.87.0/js/data-collector.min.js"></script>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/1ac9a063d3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

@@ -25,17 +25,26 @@
 
         <div class="row gx-3 gy-3 text-center my-3">
             @foreach ($apartments as $apartment)
-            @if ($apartment->user_id === Auth::id() && $apartment->visible == 1)
+            @if ($apartment->user_id === Auth::id())
             <div class="col-12 col-lg-6 position-relative ">
                 <div class="card my-card-apartment h-100 py-3">
                     <div class="card-body">
                         <div class="img_banner">
                             <img src="{{asset('storage/'.$apartment->img_apartment)}}" alt="">
                             <div class="banner">
-                                <h3 class="my-3">
-                                    {{$apartment->title_apartment}}
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="my-3">
+                                            {{$apartment->title_apartment}}
+                                        </h3>
+                                    </div>
+                                    @if($apartment->visible == 0)
+                                    <div class="col-auto">
+                                        <i class="fa-solid fa-eye-slash"></i>   
+                                    </div>
+                                    @endif
+                                </div>
 
-                                </h3>
                                 @if(!$apartment->trashed())
                                 <div class="mt-3">
                                     <a class="btn btn-primary" href="{{route('admin.apartments.show',$apartment)}}">Info Appartamento</a>

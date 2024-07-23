@@ -12,7 +12,7 @@
         </div>
         <div class="row gx-2 gy-2 text-center">
             @foreach ($apartments as $apartment)
-            @if ($apartment->user_id === Auth::id() && $apartment->visible == 1)
+            @if ($apartment->user_id === Auth::id())
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="card h-100">
                     <div class="card_body p-3">
