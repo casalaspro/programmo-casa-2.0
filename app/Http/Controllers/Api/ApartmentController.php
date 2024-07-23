@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Http;
 class ApartmentController extends Controller
 {
     public function index(){
-        $apartments = Apartment::with('user','sponsorships', 'services', 'views', 'messages')->paginate(12);
+        $apartments = Apartment::where('visible', 1)->with('user','sponsorships', 'services', 'views', 'messages')->paginate(12);
 
         return response()->json([
             'success' => true,
@@ -36,6 +36,7 @@ class ApartmentController extends Controller
         $max_lon = $request->input('max_lon');
 
         $apartments = DB::table('apartments')
+                        ->where('visible', 1)
                         ->where( 'latitude', '>', $min_lat) 
                         ->where('latitude', '<', $max_lat)
                         ->where('longitude', '<', $max_lon )
@@ -63,6 +64,7 @@ class ApartmentController extends Controller
         $serviceIds = $request->input('service_ids');
 
         $apartments = Apartment::where( 'latitude', '>', $min_lat ) 
+            ->where('visible', 1)
             ->where('latitude', '<', $max_lat )
             ->where('longitude', '<', $max_lon )
             ->where('longitude', '>', $min_lon )
