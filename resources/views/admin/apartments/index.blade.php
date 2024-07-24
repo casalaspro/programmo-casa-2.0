@@ -14,13 +14,19 @@
 
     @if (request('trash'))
         <h2 class="text-start my-4">Appartamenti eliminati</h2>
-        <p><a href="{{ route('admin.apartments.index') }}">Torna agli appartamenti</a></p>
+        <a class="btn btn-outline-secondary mb-3" href="{{ route('admin.apartments.index') }}">Torna agli appartamenti</a>
         
 
     @else
         <h2 class="text-start my-4">Appartamenti creati</h2>
-        <a class="btn btn-primary mb-3" href="{{route('admin.apartments.create')}}"> Crea un nuovo appartamento</a>
-        <p><a class="btn btn-danger" href="{{ route('admin.apartments.index', ['trash' => 1]) }}">Cestino</a></p>
+        <div class="my-route row justify-content-between">
+            <div class="col-auto">
+                <a class="btn btn-dark mb-3" href="{{route('admin.apartments.create')}}"> Crea un nuovo appartamento</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn btn-danger" href="{{ route('admin.apartments.index', ['trash' => 1]) }}">Cestino</a>
+            </div>
+        </div>
     @endif
 
     <div class="row gy-2 gx-2 flex-wrap row-cols-1 row-cols-md-2 row-cols-lg-3">
