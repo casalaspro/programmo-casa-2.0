@@ -1,7 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
-@import'partials/reset';
+@import 'partials/reset';
 @import 'partials/apartments';
-@import'partials/validation';
+@import 'partials/validation';
+@import 'partials/card-apartment';
 
 .service-name {
     text-transform: capitalize;
