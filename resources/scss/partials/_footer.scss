@@ -1,5 +1,5 @@
 .my-img-authors{
-  // width: calc(100% - 100px);
+  max-width:150px;
 }
 
 .my-card-text{
@@ -9,5 +9,15 @@
     img{
       width: 40px;
     }
+  }
+}
+
+.slide-image-apartment{
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .slide-image-apartment {
+      display: block;
   }
 }

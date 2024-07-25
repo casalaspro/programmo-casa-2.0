@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35782f489841e024071973b35e803b6c",
+    "content-hash": "f1d0c46a8a81acee32b582eb01ca6cc8",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -5511,6 +5511,61 @@
                 }
             ],
             "time": "2024-06-27T13:23:14+00:00"
+        },
+        {
+            "name": "tanthammar/laravel-window-size",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TinaHammar/laravel-window-size.git",
+                "reference": "823f1a83e25bbe862553365e1c8b00512049f8de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TinaHammar/laravel-window-size/zipball/823f1a83e25bbe862553365e1c8b00512049f8de",
+                "reference": "823f1a83e25bbe862553365e1c8b00512049f8de",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "php": "^8.0|^8.1|^8.2|^8.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tanthammar\\LaravelWindowSize\\LaravelWindowSizeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tanthammar\\LaravelWindowSize\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tina Hammar",
+                    "email": "tinahammar@gmail.com"
+                }
+            ],
+            "description": "Laravel blade directives and php helpers for serverside rendered content, based on browser window size WITHOUT css",
+            "keywords": [
+                "breakpoints",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/TinaHammar/laravel-window-size/issues",
+                "source": "https://github.com/TinaHammar/laravel-window-size/tree/2.2"
+            },
+            "time": "2024-03-14T10:59:53+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

@@ -28,6 +28,7 @@
 <body>
     <div id="app">
 
+        <x-window-size::save-to-session />
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -120,82 +121,82 @@
 
                 <!-- Footer -->
         <footer class="text-center text-lg-start bg-body-tertiary text-muted mt-5">
-            <section class="bg-body-tertiary text-center">
+            <section class="bg-body-tertiary text-center slide-image-apartment">
                 <!-- Grid container -->
                 <div class="container p-4">
                     <!-- Section: Images -->
-                    <section class="">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div data-mdb-ripple-init
-                            class="bg-image hover-overlay shadow-1-strong rounded"
-                            data-ripple-color="light"
-                        >
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
-                            <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
+                    <div class="">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
+                            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                            <div data-mdb-ripple-init
+                                class="bg-image hover-overlay shadow-1-strong rounded"
+                                data-ripple-color="light"
+                            >
+                                <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
+                                <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                                </a>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                </section>
                 <!-- Section: Images -->
-            </div>
+                </div>
             <!-- Grid container -->
             </section>
             <!-- Section: Social media -->
@@ -272,9 +273,9 @@
                         <!-- Grid column -->
                         <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 flex-grow-1">
                             <div class="row">
-                                <div class="col-12 col-sm-8 col-md-6 col-lg-6 mx-auto pb-5">
+                                <div class="col-8 col-sm-8 col-md-6 col-lg-6 mx-auto pb-5">
                                     <div class="my-card">
-                                        <div class="my-card-img text-center p-4">
+                                        <div class="my-card-img text-center p-2">
                                             <img src="{{ url('/img/authors/rocco.jpeg') }}" alt="" class="rounded-circle my-img-authors">
                                         </div>
                                         <div class="my-card-body">
@@ -299,9 +300,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-8 col-md-6 col-lg-6 mx-auto pb-5">
+                                <div class="col-8 col-sm-8 col-md-6 col-lg-6 mx-auto pb-5">
                                     <div class="my-card">
-                                        <div class="my-card-img">
+                                        <div class="my-card-img text-center">
                                             <img src="{{ url('/img/authors/alessandro.jpeg') }}" alt="" class="rounded-circle my-img-authors">
                                         </div>
                                         <div class="my-card-body">
