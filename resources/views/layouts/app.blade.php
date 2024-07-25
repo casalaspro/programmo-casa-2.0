@@ -302,8 +302,8 @@
                                 </div>
                                 <div class="col-8 col-sm-8 col-md-6 col-lg-6 mx-auto pb-5">
                                     <div class="my-card">
-                                        <div class="my-card-img text-center">
-                                            <img src="{{ url('/img/authors/alessandro.jpeg') }}" alt="" class="rounded-circle my-img-authors">
+                                        <div class="my-card-img text-center p-2">
+                                            <img src="{{ url('/img/authors/Ale.png') }}" alt="" class="rounded-circle my-img-authors">
                                         </div>
                                         <div class="my-card-body">
                                             <div class="my-card-text">
