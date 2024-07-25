@@ -18,7 +18,7 @@
         
 
     @else
-        <h2 class="text-start my-4">Appartamenti creati</h2>
+        <!-- <h2 class="text-start my-4">Appartamenti creati</h2> -->
         <div class="my-route row justify-content-between">
             <div class="col-auto">
                 <a class="btn btn-dark mb-3" href="{{route('admin.apartments.create')}}"> Crea un nuovo appartamento</a>
