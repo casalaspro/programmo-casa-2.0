@@ -8,6 +8,8 @@ use App\Models\Sponsorship;
 use Braintree;
 use Illuminate\Http\Request;
 use Braintree\Configuration;
+use Carbon\Carbon;
+
 // use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -32,10 +34,10 @@ class PaymentController extends Controller
     public function createTransition(Request $request, Sponsorship $sponsorship){
 
         // dd($request);
-        $selectedSponsorship = $request->input('sponsorship');
-        $selectedApartmentIid = $request->input('apartment-id');
+        $selectedSponsorshipId = $request->input('sponsorship');
+        $selectedApartmentId = $request->input('apartment-id');
 
-        $sponsorship = Sponsorship::where('id', $selectedSponsorship)->first();
+        $sponsorship = Sponsorship::where('id', $selectedSponsorshipId)->first();
         $price = $sponsorship->price;
         
         $gateway = new Braintree\Gateway([
@@ -54,7 +56,18 @@ class PaymentController extends Controller
             ]
           ]);
           if($result->success){
-            dd('bomba!');
+            $now = Carbon::now();
+            
+            
+            $sponsorship = Sponsorship::findOrFail($selectedSponsorshipId);
+            $sponsorship_duration = $sponsorship->duration;
+            $end_datetime = $now->addHours($sponsorship_duration);
+
+            $apartment = Apartment::findOrFail($selectedApartmentId);
+            // dd($sponsorship, $apartment);
+            $apartment_sponsorship = $apartment->sponsorships();
+            $apartment_sponsorship->attach($sponsorship, ['end_datetime' => $end_datetime]);
+            $apartment->save();
           }
           dd($result);
 

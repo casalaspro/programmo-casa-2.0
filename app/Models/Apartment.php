@@ -38,7 +38,9 @@ class Apartment extends Model
 
     //collego la tabella sponsorship 
     public function sponsorships(){
-        return $this->belongsToMany(Sponsorship::class);
+        return $this->belongsToMany(Sponsorship::class)
+        ->withPivot('end_datetime')
+        ->withTimestamps();;
     }
 
     //collego la tabella services
