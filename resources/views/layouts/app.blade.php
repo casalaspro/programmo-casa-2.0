@@ -53,9 +53,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/apartments') }}">{{ __('Appartamenti') }}</a>
-                        </li>
+                        </li> -->
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/services') }}">{{ __('Servizi') }}</a>
                         </li>
@@ -69,9 +69,9 @@
                             <a class="nav-link" href="{{url('/admin/dashboard') }}">{{ __('I Miei Appartamenti') }}</a>
                         </li> -->
                         @if (Auth::check())
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/messages') }}">{{ __('I Miei Messaggi') }}</a>
-                        </li>
+                        </li> -->
                         @endif
                     </ul>
 
@@ -95,6 +95,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('admin/dashboard') }}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item" href="{{ url('/admin/messages') }}">{{__('Messaggi')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profilo')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
