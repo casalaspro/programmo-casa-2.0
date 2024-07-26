@@ -22,10 +22,10 @@
                         @foreach($details as $detail)
                         <div class="col-6 col-sm-2 col-md-auto">
                             <div class="flex-column flex-nowrap align-items-center">
-                                <div class="col-auto my-col-auto">          
+                                <div class="col-auto my-col-auto">
                                     <div class="text-center">
                                         <img class="icon-service" src='/img/info/{{ $detail['pathImg'] }}' alt="">
-                                    </div>   
+                                    </div>
                                 </div>
                                 <div class="col-auto  my-name-icon text-center">{{ $detail['name'] }}</div>
                             </div>

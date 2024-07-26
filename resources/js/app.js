@@ -46,7 +46,7 @@ let inputSuggestions = document.querySelector('.my-table-suggestions')
 const inputLat = document.querySelector('.latitude')
 const inputLon = document.querySelector('.longitude')
 const checkAddress = document.getElementById('checkAddress')
-
+const loading = document.querySelector('.loading')
 let indexInputLatLon = null
 
 let inputCity = city.value
@@ -61,6 +61,14 @@ city.addEventListener('input', function(){
 })
 
 city.addEventListener('keyup', function (){
+
+    if(city.value !== ''){
+
+        loading.style.display = 'block'
+    }
+    
+    inputSuggestions.innerHTML = ''
+
     if(checkAddress){
 
         checkAddress.value = 0
@@ -82,6 +90,7 @@ city.addEventListener('keyup', function (){
         const suggestions = response.data.response.results;
         if(suggestions){
             inputSuggestions.innerHTML = ''
+            loading.style.display = 'none'
 
             suggestions.forEach((el)=>{
 

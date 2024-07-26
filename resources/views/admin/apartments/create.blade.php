@@ -94,6 +94,7 @@
                     <div class="mb-3">
                         <label for="complete_address" class="form-label">* Indirizzo Completo:</label>
                         <input type="text" class="form-control my-input-address my-error_check" id="complete_address" name="complete_address" value="{{ old('complete_address') }}" required placeholder="Inserisci la Via e scegli tra quelle suggerite">
+                        <div class="loading p-3"><img src="/img/Spinner-2.gif" alt=""></div>
                         <div class="invalid-feedback">
                             Per favore inserisci una città valida.
                         </div>
