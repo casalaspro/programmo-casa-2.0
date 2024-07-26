@@ -105,6 +105,29 @@ class ApartmentController extends Controller
 
     public function show(Apartment $apartment, View $view, Request $request){
 
+        $details = [
+            [
+                'name' => 'Stanze',
+                'pathImg' => 'info_rooms.svg',
+                'value' => $apartment->rooms
+            ],
+            [
+                'name' => 'Camere Da Letto',
+                'pathImg' => 'info_bedrooms.svg',
+                'value' => $apartment->beds
+            ],
+            [
+                'name' => 'Bagni',
+                'pathImg' => 'info_bathrooms.svg',
+                'value' => $apartment->bathrooms
+            ],
+            [
+                'name' => 'M.Q.',
+                'pathImg' => 'info_m2.svg',
+                'value' => $apartment->sqr_meters
+            ]
+        ];
+
         $user = Auth::user();
 
         if($apartment->user_id !== Auth::id()){
@@ -126,7 +149,7 @@ class ApartmentController extends Controller
         $view_date = View::where('ip_number', $my_ip);
         $apartment->load(['services', 'services.apartments']);
 
-        return view('admin.apartments.show', compact('apartment'));
+        return view('admin.apartments.show', compact('apartment', 'details'));
     }
 
     public function edit(Apartment $apartment){
