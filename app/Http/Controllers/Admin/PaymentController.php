@@ -68,6 +68,7 @@ class PaymentController extends Controller
             $apartment_sponsorship = $apartment->sponsorships();
             $apartment_sponsorship->attach($sponsorship, ['end_datetime' => $end_datetime]);
             $apartment->save();
+            // manca che controlli se ci sono sponsorizzazioni attive. Se trova sponsorizzazioni attive si va a sommare le ore a loro anzichè alla data di oggi. In alternativa la si fa partire da $now.
           }
           dd($result);
 
