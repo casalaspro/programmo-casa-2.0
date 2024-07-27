@@ -1,0 +1,23 @@
+.my-img-authors{
+  max-width:150px;
+}
+
+.my-card-text{
+
+  .my-contact{
+
+    img{
+      width: 40px;
+    }
+  }
+}
+
+.slide-image-apartment{
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .slide-image-apartment {
+      display: block;
+  }
+}

@@ -2,8 +2,62 @@
 
 @section('content')
 <div class="container p-3">
+    <div class="card my-card-show">
+        <img src="{{asset('storage/'.$apartment->img_apartment)}}" alt="">
+        <div class="card-body">
+            <h3 class="card-title">
+                {{$apartment->title_apartment}}
+            </h3>
+            <div class="card-text">
+                <p>
+                {{$apartment->description}}
+                </p>
+                <p>
+                {{$apartment->complete_address}}
+                </p>
+            </div>
+            <section class="pt-2 my-info">
+                <div class="container">
+                    <div class="row align-items-center">
+                        @foreach($details as $detail)
+                        <div class="col-6 col-sm-2 col-md-auto">
+                            <div class="flex-column flex-nowrap align-items-center">
+                                <div class="col-auto my-col-auto">
+                                    <div class="text-center">
+                                        <img class="icon-service" src='/img/info/{{ $detail['pathImg'] }}' alt="">
+                                    </div>
+                                </div>
+                                <div class="col-auto  my-name-icon text-center">{{ $detail['name'] }}</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            {{ $detail['value'] }}
+                        </div>
+                        @endforeach
+                    </div> 
+                </div>
+            </section>
+            <section class="my-services pt-3">
+                <div class="container">
+                    <div class="row align-items-center ">
+                    @foreach ($apartment->services as $service)
+                        <div class="col-6 col-sm-2 my-col-auto">
+                            <div class="flex-column">
+                                <div class="col-auto my-col-auto text-center ">
+                                    <img class="icon-service" src='/img/servizi/Risorsa {{ $service->id }}.svg' alt="">
+                                </div>
+                                <div class="col-auto my-col-auto my-name-icon text-center">{{ $service->name }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div> 
 
-    <div>
+    <!-- <div>
         @if ($apartment->user_id === Auth::id())
             <a class="btn btn-primary" href="{{route('admin.apartments.edit',$apartment)}}"> Modifica Appartamento</a>
         @endif
@@ -204,6 +258,6 @@
         @endif
         @endif
        
-    </div>
-</div>
+    </div>-->
+
 @endsection

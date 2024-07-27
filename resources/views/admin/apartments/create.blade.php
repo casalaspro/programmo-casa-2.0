@@ -12,7 +12,18 @@
 
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6 flex-grow-1">
-                    <p><strong>I campi che presentano * sono obligatori</strong></p>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            
+                            <p><strong>I campi che presentano * sono obligatori</strong></p>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="visible">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Visibile</label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="mb-3">
                         
                         <label for="title_apartment">* Titolo del Appartamento:</label>
@@ -83,6 +94,7 @@
                     <div class="mb-3">
                         <label for="complete_address" class="form-label">* Indirizzo Completo:</label>
                         <input type="text" class="form-control my-input-address my-error_check" id="complete_address" name="complete_address" value="{{ old('complete_address') }}" required placeholder="Inserisci la Via e scegli tra quelle suggerite">
+                        <div class="loading p-3"><img src="/img/Spinner-2.gif" alt=""></div>
                         <div class="invalid-feedback">
                             Per favore inserisci una città valida.
                         </div>
@@ -115,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
             </div>
            
            

@@ -52,17 +52,15 @@ class ApartmentController extends Controller
         // dd($user);
 
         $request->validate([
-            'title_apartment'=>'required|min:5|max:250|string',
-            'rooms'=>'required|min:1|numeric',
-            'beds'=>'required|min:1|numeric',
-            'bathrooms'=>'required|min:1|numeric',
-            'sqr_meters'=>'required|min:5|numeric',
-            'img_apartment' => 'required|image|max:2048',
-            // 'user_id'=>'required|exist:users,id',
-            // validate the request for the file
-            // 'file'=>'required|file|mimes:jpg,png|max:2048',
-            'services'=>'required',
-            'description'=>'nullable|string',
+            'title_apartment'=> 'required|min:5|max:250|string',
+            'rooms'=> 'required|min:1|numeric',
+            'beds'=> 'required|min:1|numeric',
+            'bathrooms'=> 'required|min:1|numeric',
+            'sqr_meters'=> 'required|min:5|numeric',
+            'img_apartment' => 'image|max:2048',
+            'services'=> 'required',
+            'description'=> 'nullable|string',
+            'visible' => 'nullable'
             
         ]);
 
@@ -79,6 +77,12 @@ class ApartmentController extends Controller
             $image_path = Storage::disk('public')->put('img_apartment', $request->img_apartment);
             $form_data['img_apartment'] = $image_path;
 
+        }
+
+        if($request->visible == 'on'){
+            $form_data['visible'] = 1;
+        }else{
+            $form_data['visible'] = 0;
         }
 
         $new_apartment = Apartment::create($form_data);
@@ -101,6 +105,29 @@ class ApartmentController extends Controller
 
     public function show(Apartment $apartment, View $view, Request $request){
 
+        $details = [
+            [
+                'name' => 'Stanze',
+                'pathImg' => 'info_rooms.svg',
+                'value' => $apartment->rooms
+            ],
+            [
+                'name' => 'Camere Da Letto',
+                'pathImg' => 'info_bedrooms.svg',
+                'value' => $apartment->beds
+            ],
+            [
+                'name' => 'Bagni',
+                'pathImg' => 'info_bathrooms.svg',
+                'value' => $apartment->bathrooms
+            ],
+            [
+                'name' => 'M.Q.',
+                'pathImg' => 'info_m2.svg',
+                'value' => $apartment->sqr_meters
+            ]
+        ];
+
         $user = Auth::user();
 
         if($apartment->user_id !== Auth::id()){
@@ -122,7 +149,7 @@ class ApartmentController extends Controller
         $view_date = View::where('ip_number', $my_ip);
         $apartment->load(['services', 'services.apartments']);
 
-        return view('admin.apartments.show', compact('apartment'));
+        return view('admin.apartments.show', compact('apartment', 'details'));
     }
 
     public function edit(Apartment $apartment){

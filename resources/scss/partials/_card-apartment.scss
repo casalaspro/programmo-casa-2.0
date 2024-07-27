@@ -1,0 +1,55 @@
+
+a{
+  text-decoration: none;
+  color: currentColor
+}
+
+.img_card{
+  height: 300px;
+  object-fit: cover;
+  border: none;
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+  border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  border-bottom-right-radius: var(--bs-card-inner-border-radius);
+}
+
+.my_card-title{
+    position: absolute;
+    top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: capitalize; 
+}
+
+.my-shadow{
+  height: 10px;
+  background-color: black;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: calc(100% - 7px);
+  top: 48px;
+  left: 0;
+  right: 0;
+}
+
+.my-card-title-img{
+  padding: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  
+  .my_title{
+    h4{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 20px;
+      margin: 10px;
+    }
+    border: 2px solid black;
+    background-color: white;
+  }
+}

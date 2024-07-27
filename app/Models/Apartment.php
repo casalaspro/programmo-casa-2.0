@@ -10,17 +10,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Apartment extends Model
 {
     use HasFactory;
-    protected $fillable=['title_apartment',
-    'rooms',
-    'beds',
-    'bathrooms',
-    'sqr_meters',
-    'img_apartment',
-    'description',
-    'latitude',
-    'longitude',
-    'complete_address',
-    'user_id'];
+    protected $fillable =
+    [
+        'title_apartment',
+        'rooms',
+        'beds',
+        'bathrooms',
+        'sqr_meters',
+        'img_apartment',
+        'description',
+        'latitude',
+        'longitude',
+        'complete_address',
+        'user_id',
+        'visible'
+    ];
 
     // i add it on my model
     use SoftDeletes;
