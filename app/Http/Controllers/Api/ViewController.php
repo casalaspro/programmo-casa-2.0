@@ -56,4 +56,14 @@ class ViewController extends Controller
         // return view('welcome', compact('content'));
         // return $new_view;
     }
+
+    public function showViews(Request $request){
+        $content = $request->all();
+
+        $apartmentId = $content['apartmentId'];
+
+        $views = View::where('apartment_id', $apartmentId)->get();
+
+        return response()->json(count($views));
+    }
 }

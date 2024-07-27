@@ -34,3 +34,4 @@ Route::get('/suggestions', [CallSearchAddress::class, 'fetch']);
 Route::get('/services', [ServicesController::class, 'bringServices']);
 
 Route::post('/views', [ViewController::class, 'viewStorage']);
+Route::post('/show/views', [ViewController::class, 'showViews']);
