@@ -269,76 +269,76 @@ class ApartmentSeeder extends Seeder
 
         }
 
-        for($i = 0; $i < 20; $i++){
-            $new_apartment = new Apartment();
-            // $new_apartment->complete_address = $faker->randomElement($apartment_streets);
-            $address = $faker->randomElement($apartment_streets_2);
+        // for($i = 0; $i < 20; $i++){
+        //     $new_apartment = new Apartment();
+        //     // $new_apartment->complete_address = $faker->randomElement($apartment_streets);
+        //     $address = $faker->randomElement($apartment_streets_2);
 
-            $response = Http::get('https://api.tomtom.com/search/2/geocode/'.$address.'.json?storeResult=false&countrySet=ITA&lat=41.9027835&lon=12.4963655&view=Unified&key=SmzJJ1e9vacLwiqfqgxPWAvQ7Ey33PfG')->json();
+        //     $response = Http::get('https://api.tomtom.com/search/2/geocode/'.$address.'.json?storeResult=false&countrySet=ITA&lat=41.9027835&lon=12.4963655&view=Unified&key=SmzJJ1e9vacLwiqfqgxPWAvQ7Ey33PfG')->json();
 
-            // @dd($response['results'][0]['address']['freeformAddress']);
+        //     // @dd($response['results'][0]['address']['freeformAddress']);
 
-            $new_apartment->user_id = $faker->randomElement($user_ids);
-            $new_apartment->title_apartment = $faker->randomElement($title_apartment);
-            // popoliamo la colonna delle stanze con un numero random
-            $new_apartment->rooms = $faker->numberBetween(2,8);
+        //     $new_apartment->user_id = $faker->randomElement($user_ids);
+        //     $new_apartment->title_apartment = $faker->randomElement($title_apartment);
+        //     // popoliamo la colonna delle stanze con un numero random
+        //     $new_apartment->rooms = $faker->numberBetween(2,8);
             
-            // facciamo dei controlli in base al numero di stanze per generare bagni e letti
-            if($new_apartment->rooms === 2){
-                $new_apartment->bathrooms = 1 ;
-                $new_apartment->beds = 1;
-                $new_apartment->sqr_meters = $faker->numberBetween(15,40);
+        //     // facciamo dei controlli in base al numero di stanze per generare bagni e letti
+        //     if($new_apartment->rooms === 2){
+        //         $new_apartment->bathrooms = 1 ;
+        //         $new_apartment->beds = 1;
+        //         $new_apartment->sqr_meters = $faker->numberBetween(15,40);
 
-            }elseif($new_apartment->rooms === 3) {
-                $new_apartment->bathrooms = 1;
-                $new_apartment->beds = 1;
-                $new_apartment->sqr_meters = $faker->numberBetween(40,75);
+        //     }elseif($new_apartment->rooms === 3) {
+        //         $new_apartment->bathrooms = 1;
+        //         $new_apartment->beds = 1;
+        //         $new_apartment->sqr_meters = $faker->numberBetween(40,75);
 
-            }elseif($new_apartment->rooms === 4) {
-                $new_apartment->bathrooms = 1;
-                $new_apartment->beds = $faker->numberBetween(2,3);
-                $new_apartment->sqr_meters = $faker->numberBetween(75,95);
+        //     }elseif($new_apartment->rooms === 4) {
+        //         $new_apartment->bathrooms = 1;
+        //         $new_apartment->beds = $faker->numberBetween(2,3);
+        //         $new_apartment->sqr_meters = $faker->numberBetween(75,95);
 
-            }elseif($new_apartment->rooms === 5) {
-                $new_apartment->bathrooms = $faker->numberBetween(1,2);
-                $new_apartment->beds = $faker->numberBetween(2,3);
-                $new_apartment->sqr_meters = $faker->numberBetween(95,115);
+        //     }elseif($new_apartment->rooms === 5) {
+        //         $new_apartment->bathrooms = $faker->numberBetween(1,2);
+        //         $new_apartment->beds = $faker->numberBetween(2,3);
+        //         $new_apartment->sqr_meters = $faker->numberBetween(95,115);
 
-            }elseif($new_apartment->rooms === 6) {
-                $new_apartment->bathrooms = 2;
-                $new_apartment->beds = 3;
-                $new_apartment->sqr_meters = $faker->numberBetween(115,135);
+        //     }elseif($new_apartment->rooms === 6) {
+        //         $new_apartment->bathrooms = 2;
+        //         $new_apartment->beds = 3;
+        //         $new_apartment->sqr_meters = $faker->numberBetween(115,135);
 
-            }elseif($new_apartment->rooms === 7) {
-                $new_apartment->bathrooms = 2;
-                $new_apartment->beds = 3;
-                $new_apartment->sqr_meters = $faker->numberBetween(135,160);
+        //     }elseif($new_apartment->rooms === 7) {
+        //         $new_apartment->bathrooms = 2;
+        //         $new_apartment->beds = 3;
+        //         $new_apartment->sqr_meters = $faker->numberBetween(135,160);
 
-            }else{
-                $new_apartment->bathrooms = 2;
-                $new_apartment->beds = $faker->numberBetween(3,4);
-                $new_apartment->sqr_meters = $faker->numberBetween(160,200);
+        //     }else{
+        //         $new_apartment->bathrooms = 2;
+        //         $new_apartment->beds = $faker->numberBetween(3,4);
+        //         $new_apartment->sqr_meters = $faker->numberBetween(160,200);
 
-            };
+        //     };
 
-            if($new_apartment->bathrooms + $new_apartment->beds === $new_apartment->rooms){
-                $new_apartment->rooms++;
+        //     if($new_apartment->bathrooms + $new_apartment->beds === $new_apartment->rooms){
+        //         $new_apartment->rooms++;
 
-            }
+        //     }
             
-            //popoliamo la colonna delle immagini prendendone una random dall'array creato prima
-            $new_apartment->img_apartment = $faker->randomElement($img_apartment);
-            // popoliamo la colonna della descrizione 
-            $new_apartment->description = $faker->randomElement($apartment_description);
+        //     //popoliamo la colonna delle immagini prendendone una random dall'array creato prima
+        //     $new_apartment->img_apartment = $faker->randomElement($img_apartment);
+        //     // popoliamo la colonna della descrizione 
+        //     $new_apartment->description = $faker->randomElement($apartment_description);
 
-            $new_apartment->complete_address = $response['results'][0]['address']['freeformAddress'];
-            $new_apartment->latitude = $response['results'][0]['position']['lat'];
-            $new_apartment->longitude = $response['results'][0]['position']['lon'];
+        //     $new_apartment->complete_address = $response['results'][0]['address']['freeformAddress'];
+        //     $new_apartment->latitude = $response['results'][0]['position']['lat'];
+        //     $new_apartment->longitude = $response['results'][0]['position']['lon'];
             
-            $new_apartment->visible = $faker->boolean();
-            // salviamo i dati
-            $new_apartment->save();
+        //     $new_apartment->visible = $faker->boolean();
+        //     // salviamo i dati
+        //     $new_apartment->save();
 
-        }
+        // }
     }
 }

@@ -58,8 +58,11 @@ Route::middleware(['auth','verified'])
     Route::get('messages',[ MessageController ::class, 'index'])->name('messages');
     Route::get('messages/{message}',[ MessageController ::class, 'show'])->name('messages.show');
 
+    Route::get('sponsorship/apartment/{id}', [SponsorshipController::class, 'sponsorshipSelection'])->name('sponsorship.selection');
+
     Route::get('payment', [PaymentController ::class, 'createToken']);
     Route::post('payment', [PaymentController ::class, 'createTransition'])->name('payment.transition');
+    Route::post('payment/info',[PaymentController ::class, 'createToken'])->name('payment.info');
 });
 
 Route::middleware('auth')->group(function () {
