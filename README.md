@@ -76,3 +76,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+
+
+<!-- - Interrogare il db per sapere se l'indirizzo ip è presente 
+      #rotta api(api/views) viewsController -> 'viewStorage'
+        - se è presente 
+          controlliamo che la data di creazione è precedente di 24h
+            - se è superiore di 24h
+
+              salviamo ip e data
+        - se non è presente
+          salviamo ip e data
+       
+ -->
