@@ -28,7 +28,7 @@
 <body>
     <div id="app">
 
-        <x-window-size::save-to-session />
+        {{-- <x-window-size::save-to-session /> --}}
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
